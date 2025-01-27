@@ -9,23 +9,22 @@ import streamlit as st
 import pandas as pd
 import sympy as sp
 
+# Sección de Ayuda en la barra lateral
+st.sidebar.header("Ayuda")
+st.sidebar.write("""
+    Este aplicativo permite explorar combinaciones de números primos para un número dado **n**. Dependiendo de la entrada, el programa calcula diferentes límites de los números primos p y q, y muestra las combinaciones donde su suma es igual a **2n**.
+    
+    Casos considerados:
+    - Si **n** es 2: Se genera una combinación con **p** y **q** iguales a 2.
+    - Si **n** es par y no primo: Se calculan los números primos en un intervalo determinado.
+    - Si **n** es impar y primo: Se genera una combinación con **p** y **q** iguales a **n**.
+    - Si **n** es impar y no primo: Se calculan los números primos en un intervalo determinado.
 
-# Estilo de fondo
-page_bg_img = """
-<style>
-[data-testid="stAppViewContainer"]{
-background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
-background-size:16px 16px;
-</style>
-"""
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
+    La salida es un DataFrame con las combinaciones de números primos y sus diferencias con **n**.
+    
+    **Autor:** Javier Horacio Pérez Ricárdez
+    **Copyright:** © 2025 Todos los derechos reservados.
+""")
 
 # Entrada de Streamlit para el número n
 n = st.number_input("Introduce el número n", min_value=2, step=1)
@@ -78,3 +77,10 @@ df = pd.DataFrame(datos)
 
 # Mostrar el DataFrame en Streamlit
 st.write(df)
+
+# Nota de copyright al final
+st.markdown("""
+    ---
+    **Autor:** Javier Horacio Pérez Ricárdez  
+    **Copyright:** © 2025 Todos los derechos reservados.
+""")
