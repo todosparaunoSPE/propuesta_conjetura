@@ -95,9 +95,4 @@ df = pd.DataFrame(datos)
 # Mostrar el DataFrame en Streamlit
 st.write(df)
 
-# Nota de copyright al final
-st.markdown("""
-    ---
-    **Autor:** Javier Horacio Pérez Ricárdez  
-    **Copyright:** © 2025 Todos los derechos reservados.
-""")
+
